@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{65D3E36D-BB87-4F8D-AC7E-D91E639E33BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketSilo.Api", "src\RocketSilo.Api\RocketSilo.Api.csproj", "{FC377F61-A1FD-479D-B012-FE69ECDA2322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketSilo.SourceGenerator", "src\RocketSilo.SourceGenerator\RocketSilo.SourceGenerator.csproj", "{07B5FA10-790F-4545-9EF4-ED014846C406}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B689EC26-17B9-4016-9ECD-34D28CBCE7F1}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC377F61-A1FD-479D-B012-FE69ECDA2322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC377F61-A1FD-479D-B012-FE69ECDA2322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC377F61-A1FD-479D-B012-FE69ECDA2322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC377F61-A1FD-479D-B012-FE69ECDA2322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B5FA10-790F-4545-9EF4-ED014846C406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B5FA10-790F-4545-9EF4-ED014846C406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B5FA10-790F-4545-9EF4-ED014846C406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B5FA10-790F-4545-9EF4-ED014846C406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC377F61-A1FD-479D-B012-FE69ECDA2322} = {65D3E36D-BB87-4F8D-AC7E-D91E639E33BA}
+		{07B5FA10-790F-4545-9EF4-ED014846C406} = {65D3E36D-BB87-4F8D-AC7E-D91E639E33BA}
+	EndGlobalSection
+EndGlobal

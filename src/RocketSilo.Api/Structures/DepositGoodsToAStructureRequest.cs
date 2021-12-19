@@ -1,0 +1,27 @@
+﻿using RocketSilo.Api.Ships;
+
+namespace RocketSilo.Api.Structures;
+
+[RequestUrl("/structures/:structureId/deposit", RequestMethod.POST)]
+public class DepositGoodsToAStructureRequest : IRequest<DepositGoodsToAStructureResponse>
+{
+    public int StructureId { get; }
+    public int ShipId { get; }
+    public string Good { get; }
+    public int Quantity { get; }
+    
+    public DepositGoodsToAStructureRequest(int structureId, int shipId, string good, int quantity)
+    {
+        StructureId = structureId;
+        ShipId = shipId;
+        Good = good;
+        Quantity = quantity;
+    }
+}
+
+public class DepositGoodsToAStructureResponse : IResponse
+{
+    public StructureInventory Deposit { get; set; }
+    public Ship Ship { get; set; }
+    public Structure Structure { get; set; }
+}
