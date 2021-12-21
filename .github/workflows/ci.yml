@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: dotnet test --logger "trx;logfilename=RocketSilo.Api.trx" src/RocketSilo.Api/RocketSilo.Api.Tests.csproj
+      - run: dotnet test --logger "trx;logfilename=RocketSilo.Api.Tests.trx" tests/RocketSilo.Api.Tests/RocketSilo.Api.Tests.csproj
       - uses: dorny/test-reporter@v1
         if: ${{ success() || failure() }}
         with:
           name: Tests
-          path: 'src/RocketSilo.Api/TestResults/*.trx'
+          path: 'tests/RocketSilo.Api.Tests/TestResults/*.trx'
           reporter: dotnet-trx
