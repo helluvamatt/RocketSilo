@@ -13,6 +13,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub Actions", "GitHub Actions", "{7D1F5FEC-E4C8-467E-9E61-1538DCD3A4AB}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+		.github\workflows\main.yml = .github\workflows\main.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F1726084-9F25-4781-85E7-258FB04FA85A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketSilo.Api.Tests", "tests\RocketSilo.Api.Tests\RocketSilo.Api.Tests.csproj", "{583D284A-A901-4A6B-8486-A319682B413D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +37,15 @@ Global
 		{07B5FA10-790F-4545-9EF4-ED014846C406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B5FA10-790F-4545-9EF4-ED014846C406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07B5FA10-790F-4545-9EF4-ED014846C406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{583D284A-A901-4A6B-8486-A319682B413D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{583D284A-A901-4A6B-8486-A319682B413D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{583D284A-A901-4A6B-8486-A319682B413D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{583D284A-A901-4A6B-8486-A319682B413D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FC377F61-A1FD-479D-B012-FE69ECDA2322} = {65D3E36D-BB87-4F8D-AC7E-D91E639E33BA}
 		{07B5FA10-790F-4545-9EF4-ED014846C406} = {65D3E36D-BB87-4F8D-AC7E-D91E639E33BA}
+		{7D1F5FEC-E4C8-467E-9E61-1538DCD3A4AB} = {B689EC26-17B9-4016-9ECD-34D28CBCE7F1}
+		{583D284A-A901-4A6B-8486-A319682B413D} = {F1726084-9F25-4781-85E7-258FB04FA85A}
 	EndGlobalSection
 EndGlobal

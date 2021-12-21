@@ -1,0 +1,21 @@
+name: Acceptance
+
+on:
+  pull_request:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+      - run: dotnet test --logger "trx;logfilename=RocketSilo.Api.Tests.trx" tests/RocketSilo.Api.Tests/RocketSilo.Api.Tests.csproj
+      - uses: dorny/test-reporter@v1
+        if: ${{ success() || failure() }}
+        with:
+          name: Tests
+          path: 'tests/RocketSilo.Api.Tests/TestResults/*.trx'
+          reporter: dotnet-trx
