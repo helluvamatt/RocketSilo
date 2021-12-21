@@ -6,6 +6,14 @@
     <Nullable>enable</Nullable>
     <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
 	<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Title>RocketSilo API</Title>
+	<Authors>DanielWare, helluvamatt</Authors>
+	<Description>An API to interact with SpaceTraders.io for .NET 6+</Description>
+	<PackageProjectUrl>https://github.com/DanielWare/RocketSilo</PackageProjectUrl>
+	<PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+	<RepositoryUrl>https://github.com/DanielWare/RocketSilo</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
