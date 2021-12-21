@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.FlightPlans;
 
 [RequestUrl("/my/flight-plans/:flightPlanId")]
-public class GetFlightPlanRequest : IRequest<GetFlightPlanResponse>
+public class GetFlightPlanRequest : IApiRequest<GetFlightPlanResponse>
 {
     public GetFlightPlanRequest(string flightPlanId)
     {
@@ -11,7 +11,7 @@ public class GetFlightPlanRequest : IRequest<GetFlightPlanResponse>
     public string FlightPlanId { get; }
 }
 
-public class GetFlightPlanResponse : IResponse
+public class GetFlightPlanResponse : IApiResponse
 {
     public FlightPlan FlightPlan { get; set; }
 }

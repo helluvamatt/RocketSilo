@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.FlightPlans;
 
 [RequestUrl("/my/flight-plans", RequestMethod.POST)]
-public class SubmitFlightPlanRequest : IRequest<SubmitFlightPlanResponse>
+public class SubmitFlightPlanRequest : IApiRequest<SubmitFlightPlanResponse>
 {
     public SubmitFlightPlanRequest(string shipId, string destination)
     {
@@ -12,7 +12,7 @@ public class SubmitFlightPlanRequest : IRequest<SubmitFlightPlanResponse>
     public string Destination { get; }
 }
 
-public class SubmitFlightPlanResponse : IResponse
+public class SubmitFlightPlanResponse : IApiResponse
 {
     public FlightPlan FlightPlan { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Systems;
 
 [RequestUrl("/systems/:systemSymbol")]
-public class GetSystemInfoRequest : IRequest<GetSystemInfoResponse>
+public class GetSystemInfoRequest : IApiRequest<GetSystemInfoResponse>
 {
     public string SystemSymbol { get; }
 
@@ -11,7 +11,7 @@ public class GetSystemInfoRequest : IRequest<GetSystemInfoResponse>
     }
 }
 
-public class GetSystemInfoResponse : IResponse
+public class GetSystemInfoResponse : IApiResponse
 {
     public SystemInfo System { get; set; }
 }

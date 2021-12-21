@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.WarpJump;
 
 [RequestUrl("/my/warp-jumps", RequestMethod.POST)]
-public class AttemptAWarpJumpRequest: IRequest<AttemptAWarpJumpResponse>
+public class AttemptAWarpJumpRequest: IApiRequest<AttemptAWarpJumpResponse>
 {
     public string ShipId { get; }
 
@@ -13,7 +13,7 @@ public class AttemptAWarpJumpRequest: IRequest<AttemptAWarpJumpResponse>
     }
 }
 
-public class AttemptAWarpJumpResponse : IResponse
+public class AttemptAWarpJumpResponse : IApiResponse
 {
     public FlightPlan FlightPlan { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Ships;
 
 [RequestUrl("/my/ships/:fromShipId/transfer", RequestMethod.POST)]
-public class TransferCargoBetweenShipsRequest: IRequest<TransferCargoBetweenShipsResponse>
+public class TransferCargoBetweenShipsRequest: IApiRequest<TransferCargoBetweenShipsResponse>
 {
     public string FromShipId { get; }
     public string ToShipId { get; }
@@ -17,7 +17,7 @@ public class TransferCargoBetweenShipsRequest: IRequest<TransferCargoBetweenShip
     }
 }
 
-public class TransferCargoBetweenShipsResponse : IResponse
+public class TransferCargoBetweenShipsResponse : IApiResponse
 {
     public Ship FromShip { get; set; }
     public Ship ToShip { get; set; }

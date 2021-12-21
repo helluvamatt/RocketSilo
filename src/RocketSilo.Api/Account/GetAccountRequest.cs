@@ -3,12 +3,12 @@
 namespace RocketSilo.Api.Account;
 
 [RequestUrl("/my/account")]
-public class GetAccountRequest: IRequest<GetAccountResponse>
+public class GetAccountRequest: IApiRequest<GetAccountResponse>
 {
     
 }
 
-public class GetAccountResponse: IResponse
+public class GetAccountResponse: IApiResponse
 {
     public User User { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Ships;
 
 [RequestUrl("/my/ships/:shipId/", RequestMethod.DELETE)]
-public class ScrapShipRequest : IRequest<ScrapShipResponse>
+public class ScrapShipRequest : IApiRequest<ScrapShipResponse>
 {
     public string ShipId { get; }
 
@@ -11,7 +11,7 @@ public class ScrapShipRequest : IRequest<ScrapShipResponse>
     }
 }
 
-public class ScrapShipResponse : IResponse
+public class ScrapShipResponse : IApiResponse
 {
     public string Success { get; set; }
 }

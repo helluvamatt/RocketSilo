@@ -21,7 +21,7 @@ internal partial class Client : IClient
 
     private static readonly JsonSerializerOptions SerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
-    private async Task<TResponse> SendAsync<TRequest, TResponse>(TRequest request) where TRequest: IRequest<TResponse> where TResponse: IResponse
+    private async Task<TResponse> SendAsync<TRequest, TResponse>(TRequest request) where TRequest: IApiRequest<TResponse> where TResponse: IApiResponse
     {
         Attribute? requestUrlAttribute = Attribute.GetCustomAttribute(request.GetType(), typeof(RequestUrlAttribute));
         if (requestUrlAttribute is not RequestUrlAttribute requestUrl)

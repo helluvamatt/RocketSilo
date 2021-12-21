@@ -15,4 +15,5 @@ public class Ship
     public int Weapons { get; set; }
     public int X { get; set; }
     public int Y { get; set; }
+    public string? FlightPlanId { get; set; }
 }

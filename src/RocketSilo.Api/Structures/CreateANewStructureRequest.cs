@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Structures;
 
 [RequestUrl("/my/structures", RequestMethod.POST)]
-public class CreateANewStructureRequest : IRequest<CreateANewStructureResponse>
+public class CreateANewStructureRequest : IApiRequest<CreateANewStructureResponse>
 {
     public string Location { get; }
     public string Type { get; }
@@ -13,7 +13,7 @@ public class CreateANewStructureRequest : IRequest<CreateANewStructureResponse>
     }
 }
 
-public class CreateANewStructureResponse : IResponse
+public class CreateANewStructureResponse : IApiResponse
 {
     public Structure Structure { get; set; }
 }

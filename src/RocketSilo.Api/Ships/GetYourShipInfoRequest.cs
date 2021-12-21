@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Ships;
 
 [RequestUrl("/my/ships/:shipId")]
-public class GetYourShipInfoRequest : IRequest<GetYourShipInfoResponse>
+public class GetYourShipInfoRequest : IApiRequest<GetYourShipInfoResponse>
 {
     public string ShipId { get; }
 
@@ -11,7 +11,7 @@ public class GetYourShipInfoRequest : IRequest<GetYourShipInfoResponse>
     }
 }
 
-public class GetYourShipInfoResponse : IResponse
+public class GetYourShipInfoResponse : IApiResponse
 {
     public Ship Ship { get; set; }
 }

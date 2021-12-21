@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Locations;
 
 [RequestUrl("/locations/:locationSymbol")]
-public class GetInfoOnALocationRequest : IRequest<GetInfoOnALocationResponse>
+public class GetInfoOnALocationRequest : IApiRequest<GetInfoOnALocationResponse>
 {
     public string LocationSymbol { get; }
 
@@ -11,7 +11,7 @@ public class GetInfoOnALocationRequest : IRequest<GetInfoOnALocationResponse>
     }
 }
 
-public class GetInfoOnALocationResponse : IResponse
+public class GetInfoOnALocationResponse : IApiResponse
 {
     public Location Location { get; set; }
 }

@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Locations;
 
 [RequestUrl("/locations/:locationSymbol/ships")]
-public class GetTheShipsAtALocationRequest : IRequest<GetTheShipsAtALocationResponse>
+public class GetTheShipsAtALocationRequest : IApiRequest<GetTheShipsAtALocationResponse>
 {
     public string LocationSymbol { get; }
 
@@ -11,7 +11,7 @@ public class GetTheShipsAtALocationRequest : IRequest<GetTheShipsAtALocationResp
     }
 }
 
-public class GetTheShipsAtALocationResponse : IResponse
+public class GetTheShipsAtALocationResponse : IApiResponse
 {
     public IEnumerable<LocationsShip> Ships { get; set; }
 }

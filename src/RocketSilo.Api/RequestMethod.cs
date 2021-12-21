@@ -8,10 +8,10 @@ public enum RequestMethod
     DELETE
 }
 
-public interface IRequest<T> where T : IResponse
+public interface IApiRequest<T> where T : IApiResponse
 {
 }
 
-public interface IResponse
+public interface IApiResponse
 {
 }

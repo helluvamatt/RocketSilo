@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Ships;
 
 [RequestUrl("/my/ships", RequestMethod.POST)]
-public class PurchaseANewShipRequest : IRequest<PurchaseANewShipResponse>
+public class PurchaseANewShipRequest : IApiRequest<PurchaseANewShipResponse>
 {
     public PurchaseANewShipRequest(string location, string type)
     {
@@ -12,7 +12,7 @@ public class PurchaseANewShipRequest : IRequest<PurchaseANewShipResponse>
     public string Type { get; }
 }
 
-public class PurchaseANewShipResponse : IResponse
+public class PurchaseANewShipResponse : IApiResponse
 {
     public int Credits { get; set; }
     public Ship Ship { get; set; }

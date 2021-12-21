@@ -1,12 +1,12 @@
 ﻿namespace RocketSilo.Api.Loans;
 
 [RequestUrl("/my/loans")]
-public class GetYourLoansRequest : IRequest<GetYourLoansResponse>
+public class GetYourLoansRequest : IApiRequest<GetYourLoansResponse>
 {
     
 }
 
-public class GetYourLoansResponse : IResponse
+public class GetYourLoansResponse : IApiResponse
 {
     public IEnumerable<Loan> Loans { get; set; }
 }

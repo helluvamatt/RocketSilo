@@ -4,7 +4,7 @@ using RocketSilo.Api.Ships;
 namespace RocketSilo.Api.SellOrders;
 
 [RequestUrl("/my/sell-orders", RequestMethod.POST)]
-public class PlaceANewSellOrderRequest : IRequest<PlaceANewSellOrderResponse>
+public class PlaceANewSellOrderRequest : IApiRequest<PlaceANewSellOrderResponse>
 {
     public string ShipId { get; }
     public string Good { get; }
@@ -17,7 +17,7 @@ public class PlaceANewSellOrderRequest : IRequest<PlaceANewSellOrderResponse>
     }
 }
 
-public class PlaceANewSellOrderResponse : IResponse
+public class PlaceANewSellOrderResponse : IApiResponse
 {
     public int Credits { get; set; }
     public Order Order { get; set; }

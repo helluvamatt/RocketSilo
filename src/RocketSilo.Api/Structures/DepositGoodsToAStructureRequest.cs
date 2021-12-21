@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.Structures;
 
 [RequestUrl("/structures/:structureId/deposit", RequestMethod.POST)]
-public class DepositGoodsToAStructureRequest : IRequest<DepositGoodsToAStructureResponse>
+public class DepositGoodsToAStructureRequest : IApiRequest<DepositGoodsToAStructureResponse>
 {
     public int StructureId { get; }
     public int ShipId { get; }
@@ -19,7 +19,7 @@ public class DepositGoodsToAStructureRequest : IRequest<DepositGoodsToAStructure
     }
 }
 
-public class DepositGoodsToAStructureResponse : IResponse
+public class DepositGoodsToAStructureResponse : IApiResponse
 {
     public StructureInventory Deposit { get; set; }
     public Ship Ship { get; set; }

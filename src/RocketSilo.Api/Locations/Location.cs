@@ -9,4 +9,6 @@ public class Location
     public string Type { get; set; }
     public int X { get; set; }
     public int Y { get; set; }
+    public List<string> Traits { get; set; }
+    public List<string>? Messages { get; set; }
 }

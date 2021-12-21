@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.PurchaseOrders;
 
 [RequestUrl("/my/purchase-orders", RequestMethod.POST)]
-public class PlaceANewPurchaseOrderRequest : IRequest<PlaceANewPurchaseOrderResponse>
+public class PlaceANewPurchaseOrderRequest : IApiRequest<PlaceANewPurchaseOrderResponse>
 {
     public string ShipId { get; }
     public string Good { get; }
@@ -16,7 +16,7 @@ public class PlaceANewPurchaseOrderRequest : IRequest<PlaceANewPurchaseOrderResp
     }
 }
 
-public class PlaceANewPurchaseOrderResponse : IResponse
+public class PlaceANewPurchaseOrderResponse : IApiResponse
 {
     public int Credits { get; set; }
     public Order Order { get; set; }

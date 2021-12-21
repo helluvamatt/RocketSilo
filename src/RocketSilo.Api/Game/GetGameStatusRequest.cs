@@ -1,12 +1,12 @@
 ﻿namespace RocketSilo.Api.Game;
 
 [RequestUrl("/game/status")]
-public class GetGameStatusRequest : IRequest<GetGameStatusResponse>
+public class GetGameStatusRequest : IApiRequest<GetGameStatusResponse>
 {
     
 }
 
-public class GetGameStatusResponse : IResponse
+public class GetGameStatusResponse : IApiResponse
 {
     public string Status { get; set; }
 }

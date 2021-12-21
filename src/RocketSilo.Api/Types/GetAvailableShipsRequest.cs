@@ -1,12 +1,12 @@
 ﻿namespace RocketSilo.Api.Types;
 
 [RequestUrl("/types/ships")]
-public class GetAvailableShipsRequest : IRequest<GetAvailableShipsResponse>
+public class GetAvailableShipsRequest : IApiRequest<GetAvailableShipsResponse>
 {
     
 }
 
-public class GetAvailableShipsResponse : IResponse
+public class GetAvailableShipsResponse : IApiResponse
 {
     public IEnumerable<ShipDefinition> Ships { get; set; }
 }

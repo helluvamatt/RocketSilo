@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Users;
 
 [RequestUrl("/users/:username/claim", RequestMethod.POST)]
-public class ClaimAUsernameRequest : IRequest<ClaimAUsernameResponse>
+public class ClaimAUsernameRequest : IApiRequest<ClaimAUsernameResponse>
 {
     public string Username { get; }
 
@@ -11,7 +11,7 @@ public class ClaimAUsernameRequest : IRequest<ClaimAUsernameResponse>
     }
 }
 
-public class ClaimAUsernameResponse : IResponse
+public class ClaimAUsernameResponse : IApiResponse
 {
     public string Token { get; set; }
     public User User { get; set; }

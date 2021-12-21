@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Systems;
 
 [RequestUrl("/systems/:systemSymbol/ship-listings")]
-public class GetAllAvailableShipsInSystemRequest : IRequest<GetAllAvailableShipsInSystemResponse>
+public class GetAllAvailableShipsInSystemRequest : IApiRequest<GetAllAvailableShipsInSystemResponse>
 {
     public string SystemSymbol { get; }
     public GetAllAvailableShipsInSystemRequest(string systemSymbol)
@@ -10,7 +10,7 @@ public class GetAllAvailableShipsInSystemRequest : IRequest<GetAllAvailableShips
     }
 }
 
-public class GetAllAvailableShipsInSystemResponse : IResponse
+public class GetAllAvailableShipsInSystemResponse : IApiResponse
 {
     public IEnumerable<SystemShip> ShipListings { get; set; }
 }

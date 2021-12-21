@@ -1,12 +1,12 @@
 ﻿namespace RocketSilo.Api.Types;
 
 [RequestUrl("/types/goods")]
-public class GetAvailableGoodsRequest : IRequest<GetAvailableGoodsResponse>
+public class GetAvailableGoodsRequest : IApiRequest<GetAvailableGoodsResponse>
 {
     
 }
 
-public class GetAvailableGoodsResponse : IResponse
+public class GetAvailableGoodsResponse : IApiResponse
 {
     public IEnumerable<GoodDefinition> Goods { get; set; }
 }

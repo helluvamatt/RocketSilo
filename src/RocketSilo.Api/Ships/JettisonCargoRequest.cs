@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Ships;
 
 [RequestUrl("/my/ships/:shipId/jettison", RequestMethod.POST)]
-public class JettisonCargoRequest: IRequest<JettisonCargoResponse>
+public class JettisonCargoRequest: IApiRequest<JettisonCargoResponse>
 {
     public string ShipId { get; }
     public string Good { get; }
@@ -15,7 +15,7 @@ public class JettisonCargoRequest: IRequest<JettisonCargoResponse>
     }
 }
 
-public class JettisonCargoResponse : IResponse
+public class JettisonCargoResponse : IApiResponse
 {
     public string Good { get; set; }
     public int QuantityRemaining { get; set; }

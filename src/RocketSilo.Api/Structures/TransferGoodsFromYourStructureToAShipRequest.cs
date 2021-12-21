@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.Structures;
 
 [RequestUrl("/my/structures/:structureId/transfer", RequestMethod.POST)]
-public class TransferGoodsFromYourStructureToAShipRequest : IRequest<TransferGoodsFromYourStructureToAShipResponse>
+public class TransferGoodsFromYourStructureToAShipRequest : IApiRequest<TransferGoodsFromYourStructureToAShipResponse>
 {
     public string StructureId { get; }
     public string ShipId { get; }
@@ -19,7 +19,7 @@ public class TransferGoodsFromYourStructureToAShipRequest : IRequest<TransferGoo
     }
 }
 
-public class TransferGoodsFromYourStructureToAShipResponse : IResponse
+public class TransferGoodsFromYourStructureToAShipResponse : IApiResponse
 {
     public StructureInventory Transfer { get; set; }
     public Structure Structure { get; set; }

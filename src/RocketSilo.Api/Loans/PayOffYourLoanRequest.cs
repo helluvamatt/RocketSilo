@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Loans;
 
 [RequestUrl("/my/loans/:loanId", RequestMethod.PUT)]
-public class PayOffYourLoanRequest : IRequest<PayOffYourLoanResponse>
+public class PayOffYourLoanRequest : IApiRequest<PayOffYourLoanResponse>
 {
     public string LoanId { get; }
 
@@ -11,7 +11,7 @@ public class PayOffYourLoanRequest : IRequest<PayOffYourLoanResponse>
     }
 }
 
-public class PayOffYourLoanResponse : IResponse
+public class PayOffYourLoanResponse : IApiResponse
 {
     public int Credits { get; set; }
     public IEnumerable<Loan> Loans { get; set; }

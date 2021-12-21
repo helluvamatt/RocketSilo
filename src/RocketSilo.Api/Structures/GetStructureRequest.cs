@@ -1,7 +1,7 @@
 ﻿namespace RocketSilo.Api.Structures;
 
 [RequestUrl("/my/structures/:structureId")]
-public class GetStructureRequest : IRequest<GetStructureResponse>
+public class GetStructureRequest : IApiRequest<GetStructureResponse>
 {
     public string StructureId { get; }
 
@@ -11,7 +11,7 @@ public class GetStructureRequest : IRequest<GetStructureResponse>
     }
 }
 
-public class GetStructureResponse : IResponse
+public class GetStructureResponse : IApiResponse
 {
     public Structure Structure { get; set; }
 }

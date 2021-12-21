@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.Systems;
 
 [RequestUrl("/systems/:systemSymbol/locations")]
-public class GetLocationInfoForASystemRequest : IRequest<GetLocationInfoForASystemResponse>
+public class GetLocationInfoForASystemRequest : IApiRequest<GetLocationInfoForASystemResponse>
 {
     public string SystemSymbol { get; }
 
@@ -13,7 +13,7 @@ public class GetLocationInfoForASystemRequest : IRequest<GetLocationInfoForASyst
     }
 }
 
-public class GetLocationInfoForASystemResponse : IResponse
+public class GetLocationInfoForASystemResponse : IApiResponse
 {
     public IEnumerable<Location> Locations { get; set; }
 }

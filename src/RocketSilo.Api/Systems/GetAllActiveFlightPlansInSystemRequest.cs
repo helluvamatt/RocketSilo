@@ -3,7 +3,7 @@
 namespace RocketSilo.Api.Systems;
 
 [RequestUrl("/systems/:systemSymbol/flight-plans")]
-public class GetAllActiveFlightPlansInSystemRequest : IRequest<GetAllActiveFlightPlansInSystemResponse>
+public class GetAllActiveFlightPlansInSystemRequest : IApiRequest<GetAllActiveFlightPlansInSystemResponse>
 {
     public string SystemSymbol { get; }
     public GetAllActiveFlightPlansInSystemRequest(string systemSymbol)
@@ -12,7 +12,7 @@ public class GetAllActiveFlightPlansInSystemRequest : IRequest<GetAllActiveFligh
     }
 }
 
-public class GetAllActiveFlightPlansInSystemResponse : IResponse
+public class GetAllActiveFlightPlansInSystemResponse : IApiResponse
 {
     public IEnumerable<FlightPlan> FlightPlans { get; set; }
 }

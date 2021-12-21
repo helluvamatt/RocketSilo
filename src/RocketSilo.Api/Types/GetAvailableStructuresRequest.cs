@@ -1,12 +1,12 @@
 ﻿namespace RocketSilo.Api.Types;
 
 [RequestUrl("/types/structures")]
-public class GetAvailableStructuresRequest : IRequest<GetAvailableStructuresResponse>
+public class GetAvailableStructuresRequest : IApiRequest<GetAvailableStructuresResponse>
 {
     
 }
 
-public class GetAvailableStructuresResponse : IResponse
+public class GetAvailableStructuresResponse : IApiResponse
 {
     public IEnumerable<StructureDefinition> Structures { get; set; }
 }
