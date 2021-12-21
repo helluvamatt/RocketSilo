@@ -1,40 +1,24 @@
 using System.Reflection;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using RocketSilo.Api.Users;
 
 namespace RocketSilo.Api;
 
-public partial class Client
+internal partial class Client : IClient
 {
-    public async Task<string> CreateNewUser(string username)
+    internal Client(HttpClient httpClient, Uri baseUri, string? token = null)
     {
-        Client c = new();
-        ClaimAUsernameResponse response = await c.ClaimAUsername(new ClaimAUsernameRequest(username));
-        return response.Token;
-    }
-
-    public static Client CreateClient(string token)
-    {
-        return new Client(token);
-    }
-    
-    private Client(string token)
-    {
+        this.httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+        this.baseUri = baseUri ?? throw new ArgumentNullException(nameof(baseUri));
         this.token = token;
     }
 
-    private Client() 
-    { 
-        this.token = string.Empty;
-    }
-    
-    private static readonly HttpClient HttpClient = new();
-    private const string BaseUrl = "https://api.spacetraders.io";
-    private readonly string token;
+    private readonly HttpClient httpClient;
+    private readonly Uri baseUri;
+    private readonly string? token;
 
-    private static readonly Regex _urlParseRegex = new(@"\/(:[a-z|A-Z]*)\/?");
-    
+    private static readonly Regex UrlParseRegex = new(@"\/(:[a-z|A-Z]*)\/?");
+
     private static readonly JsonSerializerOptions SerializerOptions = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
 
     private async Task<TResponse> SendAsync<TRequest, TResponse>(TRequest request) where TRequest: IRequest<TResponse> where TResponse: IResponse
@@ -42,11 +26,11 @@ public partial class Client
         Attribute? requestUrlAttribute = Attribute.GetCustomAttribute(request.GetType(), typeof(RequestUrlAttribute));
         if (requestUrlAttribute is not RequestUrlAttribute requestUrl)
             throw new InvalidOperationException($"Request type {request.GetType()} does not have a RequestUrlAttribute");
-        
-        MatchCollection matches = _urlParseRegex.Matches(requestUrl.Url);
+
+        MatchCollection matches = UrlParseRegex.Matches(requestUrl.Url);
 
         List<string> urlTokens = new();
-            
+
         if (matches.Any())
         {
             foreach (Match match in matches)
@@ -86,9 +70,8 @@ public partial class Client
         HttpRequestMessage requestMessage = new();
         requestMessage.Headers.Add("Authorization", $"Bearer {token}");
         requestMessage.Headers.Add("Accept", "application/json");
-        requestMessage.RequestUri = new Uri($"{BaseUrl}{url}");
-            
-            
+        requestMessage.RequestUri = new Uri(baseUri, url);
+
         requestMessage.Method = requestUrl.RequestMethod switch
         {
             RequestMethod.GET => HttpMethod.Get,
@@ -102,14 +85,13 @@ public partial class Client
         {
             requestMessage.Content = new StringContent(JsonSerializer.Serialize(request, SerializerOptions), System.Text.Encoding.UTF8, "application/json");
         }
-            
-        return await SendAndDeserializeAsync<TResponse>(requestMessage);
 
+        return await SendAndDeserializeAsync<TResponse>(requestMessage);
     }
 
-    private static async Task<TResponse> SendAndDeserializeAsync<TResponse>(HttpRequestMessage requestMessage)
+    private async Task<TResponse> SendAndDeserializeAsync<TResponse>(HttpRequestMessage requestMessage)
     {
-        HttpResponseMessage responseMessage = await HttpClient.SendAsync(requestMessage);
+        HttpResponseMessage responseMessage = await httpClient.SendAsync(requestMessage);
         byte[] bytes = await responseMessage.Content.ReadAsByteArrayAsync();
         TResponse? responseObject = JsonSerializer.Deserialize<TResponse>(bytes, SerializerOptions);
         if (responseObject is null)

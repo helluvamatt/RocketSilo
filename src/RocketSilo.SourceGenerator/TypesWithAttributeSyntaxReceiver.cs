@@ -8,12 +8,12 @@ public class TypesWithAttributeSyntaxReceiver : ISyntaxContextReceiver
     public List<TypeDeclarationSyntax> Types { get; } = new();
 
     private readonly string attributeName;
-    
+
     public TypesWithAttributeSyntaxReceiver(string attributeName)
     {
         this.attributeName = attributeName;
     }
-    
+
     public void OnVisitSyntaxNode(GeneratorSyntaxContext context)
     {
         if (context.Node is not TypeDeclarationSyntax typeDeclarationSyntax) return;
