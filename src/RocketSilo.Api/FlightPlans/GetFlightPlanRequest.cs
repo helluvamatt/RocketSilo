@@ -13,5 +13,5 @@ public class GetFlightPlanRequest : IApiRequest<GetFlightPlanResponse>
 
 public class GetFlightPlanResponse : IApiResponse
 {
-    public FlightPlan FlightPlan { get; set; }
+    public FlightPlan FlightPlan { get; set; } = null!;
 }

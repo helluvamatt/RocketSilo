@@ -15,5 +15,5 @@ public class AttemptAWarpJumpRequest: IApiRequest<AttemptAWarpJumpResponse>
 
 public class AttemptAWarpJumpResponse : IApiResponse
 {
-    public FlightPlan FlightPlan { get; set; }
+    public FlightPlan FlightPlan { get; set; } = null!;
 }

@@ -13,5 +13,5 @@ public class TakeOutALoanRequest: IApiRequest<TakeOutALoanResponse>
 public class TakeOutALoanResponse : IApiResponse
 {
     public int Credits { get; set; }
-    public IEnumerable<Loan> Loans { get; set; }
+    public IEnumerable<Loan> Loans { get; set; } = Enumerable.Empty<Loan>();
 }

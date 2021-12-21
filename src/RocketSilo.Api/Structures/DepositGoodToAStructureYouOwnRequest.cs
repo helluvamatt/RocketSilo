@@ -21,7 +21,7 @@ public class DepositGoodToAStructureYouOwnRequest: IApiRequest<DepositGoodToAStr
 
 public class DepositGoodToAStructureYouOwnResponse : IApiResponse
 {
-    public StructureInventory Deposit { get; set; }
-    public Ship Ship { get; set; }
-    public Structure Structure { get; set; }
+    public StructureInventory Deposit { get; set; } = null!;
+    public Ship Ship { get; set; } = null!;
+    public Structure Structure { get; set; } = null!;
 }

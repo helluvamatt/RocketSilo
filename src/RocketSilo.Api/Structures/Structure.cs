@@ -3,12 +3,12 @@
 public class Structure
 {
     public bool Active { get; set; }
-    public IEnumerable<string> Consumes { get; set; }
-    public string Id { get; set; }
-    public IEnumerable<StructureInventory> Inventory { get; set; }
-    public string Location { get; set; }
-    public StructureOwner Owner { get; set; }
-    public IEnumerable<string> Produces { get; set; }
-    public string Status { get; set; }
-    public string Type { get; set; }
+    public IEnumerable<string> Consumes { get; set; } = Enumerable.Empty<string>();
+    public string Id { get; set; } = null!;
+    public IEnumerable<StructureInventory> Inventory { get; set; } = Enumerable.Empty<StructureInventory>();
+    public string Location { get; set; } = null!;
+    public StructureOwner Owner { get; set; } = null!;
+    public IEnumerable<string> Produces { get; set; } = Enumerable.Empty<string>();
+    public string Status { get; set; } = null!;
+    public string Type { get; set; } = null!;
 }

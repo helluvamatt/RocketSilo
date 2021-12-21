@@ -7,6 +7,6 @@ public class Marketplace
     public int QuantityAvailable { get; set; }
     public int SellPricePerUnit { get; set; }
     public int Spread { get; set; }
-    public string Symbol { get; set; }
+    public string Symbol { get; set; } = null!;
     public int VolumePerUnit { get; set; }
 }

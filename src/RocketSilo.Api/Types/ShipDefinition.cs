@@ -2,14 +2,14 @@
 
 public class ShipDefinition : IComparable, IComparable<ShipDefinition>
 {
-    public string Class { get; set; }
-    public string Manufacturer { get; set; }
+    public string Class { get; set; } = null!;
+    public string Manufacturer { get; set; } = null!;
     public int MaxCargo { get; set; }
     public int Plating { get; set; }
     public int Speed { get; set; }
-    public string Type { get; set; }
+    public string Type { get; set; } = null!;
     public int Weapons { get; set; }
-    
+
     public int CompareTo(object? obj)
     {
         if (obj == null)

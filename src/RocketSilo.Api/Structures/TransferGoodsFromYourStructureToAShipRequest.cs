@@ -21,7 +21,7 @@ public class TransferGoodsFromYourStructureToAShipRequest : IApiRequest<Transfer
 
 public class TransferGoodsFromYourStructureToAShipResponse : IApiResponse
 {
-    public StructureInventory Transfer { get; set; }
-    public Structure Structure { get; set; }
-    public Ship Ship { get; set; }
+    public StructureInventory Transfer { get; set; } = null!;
+    public Structure Structure { get; set; } = null!;
+    public Ship Ship { get; set; } = null!;
 }

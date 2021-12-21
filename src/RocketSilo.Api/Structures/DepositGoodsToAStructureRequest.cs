@@ -9,7 +9,7 @@ public class DepositGoodsToAStructureRequest : IApiRequest<DepositGoodsToAStruct
     public int ShipId { get; }
     public string Good { get; }
     public int Quantity { get; }
-    
+
     public DepositGoodsToAStructureRequest(int structureId, int shipId, string good, int quantity)
     {
         StructureId = structureId;
@@ -21,7 +21,7 @@ public class DepositGoodsToAStructureRequest : IApiRequest<DepositGoodsToAStruct
 
 public class DepositGoodsToAStructureResponse : IApiResponse
 {
-    public StructureInventory Deposit { get; set; }
-    public Ship Ship { get; set; }
-    public Structure Structure { get; set; }
+    public StructureInventory Deposit { get; set; } = null!;
+    public Ship Ship { get; set; } = null!;
+    public Structure Structure { get; set; } = null!;
 }

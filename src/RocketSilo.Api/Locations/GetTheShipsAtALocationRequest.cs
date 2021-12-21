@@ -13,5 +13,5 @@ public class GetTheShipsAtALocationRequest : IApiRequest<GetTheShipsAtALocationR
 
 public class GetTheShipsAtALocationResponse : IApiResponse
 {
-    public IEnumerable<LocationsShip> Ships { get; set; }
+    public IEnumerable<LocationsShip> Ships { get; set; } = Enumerable.Empty<LocationsShip>();
 }

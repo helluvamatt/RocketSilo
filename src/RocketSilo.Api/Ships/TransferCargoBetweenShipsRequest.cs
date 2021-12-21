@@ -19,6 +19,6 @@ public class TransferCargoBetweenShipsRequest: IApiRequest<TransferCargoBetweenS
 
 public class TransferCargoBetweenShipsResponse : IApiResponse
 {
-    public Ship FromShip { get; set; }
-    public Ship ToShip { get; set; }
+    public Ship FromShip { get; set; } = null!;
+    public Ship ToShip { get; set; } = null!;
 }

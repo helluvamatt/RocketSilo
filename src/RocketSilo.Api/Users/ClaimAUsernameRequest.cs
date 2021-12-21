@@ -13,6 +13,6 @@ public class ClaimAUsernameRequest : IApiRequest<ClaimAUsernameResponse>
 
 public class ClaimAUsernameResponse : IApiResponse
 {
-    public string Token { get; set; }
-    public User User { get; set; }
+    public string Token { get; set; } = null!;
+    public User User { get; set; } = null!;
 }

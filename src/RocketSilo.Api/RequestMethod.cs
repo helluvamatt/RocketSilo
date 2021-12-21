@@ -1,5 +1,6 @@
 ﻿namespace RocketSilo.Api;
 
+// ReSharper disable four InconsistentNaming
 public enum RequestMethod
 {
     GET,
@@ -8,6 +9,7 @@ public enum RequestMethod
     DELETE
 }
 
+// ReSharper disable once UnusedTypeParameter
 public interface IApiRequest<T> where T : IApiResponse
 {
 }

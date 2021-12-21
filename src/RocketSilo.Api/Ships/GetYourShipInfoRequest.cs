@@ -13,5 +13,5 @@ public class GetYourShipInfoRequest : IApiRequest<GetYourShipInfoResponse>
 
 public class GetYourShipInfoResponse : IApiResponse
 {
-    public Ship Ship { get; set; }
+    public Ship Ship { get; set; } = null!;
 }

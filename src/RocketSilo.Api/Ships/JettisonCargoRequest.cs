@@ -17,7 +17,7 @@ public class JettisonCargoRequest: IApiRequest<JettisonCargoResponse>
 
 public class JettisonCargoResponse : IApiResponse
 {
-    public string Good { get; set; }
+    public string Good { get; set; } = null!;
     public int QuantityRemaining { get; set; }
-    public string ShipId { get; set; }
+    public string ShipId { get; set; } = null!;
 }

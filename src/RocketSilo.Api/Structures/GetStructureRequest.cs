@@ -13,5 +13,5 @@ public class GetStructureRequest : IApiRequest<GetStructureResponse>
 
 public class GetStructureResponse : IApiResponse
 {
-    public Structure Structure { get; set; }
+    public Structure Structure { get; set; } = null!;
 }

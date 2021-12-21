@@ -12,5 +12,5 @@ public class GetSystemDockedShipsRequest : IApiRequest<GetSystemDockedShipsRespo
 
 public class GetSystemDockedShipsResponse : IApiResponse
 {
-    public IEnumerable<SystemDockedShip> Ships { get; set; }
+    public IEnumerable<SystemDockedShip> Ships { get; set; } = Enumerable.Empty<SystemDockedShip>();
 }

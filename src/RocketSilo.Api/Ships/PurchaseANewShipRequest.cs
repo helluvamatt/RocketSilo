@@ -15,5 +15,5 @@ public class PurchaseANewShipRequest : IApiRequest<PurchaseANewShipResponse>
 public class PurchaseANewShipResponse : IApiResponse
 {
     public int Credits { get; set; }
-    public Ship Ship { get; set; }
+    public Ship Ship { get; set; } = null!;
 }

@@ -12,5 +12,5 @@ public class GetAllAvailableShipsInSystemRequest : IApiRequest<GetAllAvailableSh
 
 public class GetAllAvailableShipsInSystemResponse : IApiResponse
 {
-    public IEnumerable<SystemShip> ShipListings { get; set; }
+    public IEnumerable<SystemShip> ShipListings { get; set; } = Enumerable.Empty<SystemShip>();
 }

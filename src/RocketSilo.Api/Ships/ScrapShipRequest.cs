@@ -13,5 +13,5 @@ public class ScrapShipRequest : IApiRequest<ScrapShipResponse>
 
 public class ScrapShipResponse : IApiResponse
 {
-    public string Success { get; set; }
+    public string Success { get; set; } = null!;
 }

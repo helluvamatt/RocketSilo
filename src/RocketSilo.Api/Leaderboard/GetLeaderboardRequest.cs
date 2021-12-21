@@ -7,6 +7,6 @@ public class GetLeaderboardRequest : IApiRequest<GetLeaderboardResponse>
 
 public class GetLeaderboardResponse : IApiResponse
 {
-    public IEnumerable<Networth> NetWorth { get; set; }
-    public IEnumerable<Networth> UserNetWorth { get; set; }
+    public IEnumerable<Networth> NetWorth { get; set; } = Enumerable.Empty<Networth>();
+    public IEnumerable<Networth> UserNetWorth { get; set; } = Enumerable.Empty<Networth>();
 }

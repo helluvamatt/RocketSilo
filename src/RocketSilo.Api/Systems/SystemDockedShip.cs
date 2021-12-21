@@ -2,7 +2,7 @@
 
 public class SystemDockedShip
 {
-    public string ShipId { get; set; }
-    public string ShipType { get; set; }
-    public string Username { get; set; }
+    public string ShipId { get; set; } = null!;
+    public string ShipType { get; set; } = null!;
+    public string Username { get; set; } = null!;
 }

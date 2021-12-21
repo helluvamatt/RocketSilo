@@ -13,5 +13,5 @@ public class SeeSpecificStructureRequest : IApiRequest<SeeSpecificStructureRespo
 
 public class SeeSpecificStructureResponse : IApiResponse
 {
-    public StructureStatus Structure { get; set; }
+    public StructureStatus Structure { get; set; } = null!;
 }

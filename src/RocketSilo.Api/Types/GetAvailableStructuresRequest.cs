@@ -3,10 +3,9 @@
 [RequestUrl("/types/structures")]
 public class GetAvailableStructuresRequest : IApiRequest<GetAvailableStructuresResponse>
 {
-    
 }
 
 public class GetAvailableStructuresResponse : IApiResponse
 {
-    public IEnumerable<StructureDefinition> Structures { get; set; }
+    public IEnumerable<StructureDefinition> Structures { get; set; } = Enumerable.Empty<StructureDefinition>();
 }

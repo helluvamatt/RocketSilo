@@ -2,6 +2,6 @@
 
 public class StructureInventory
 {
-    public string Good { get; set; }
+    public string Good { get; set; } = null!;
     public int Quantity { get; set; }
 }

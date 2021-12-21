@@ -20,6 +20,6 @@ public class PlaceANewSellOrderRequest : IApiRequest<PlaceANewSellOrderResponse>
 public class PlaceANewSellOrderResponse : IApiResponse
 {
     public int Credits { get; set; }
-    public Order Order { get; set; }
-    public Ship Ship { get; set; }
+    public Order Order { get; set; } = null!;
+    public Ship Ship { get; set; } = null!;
 }
